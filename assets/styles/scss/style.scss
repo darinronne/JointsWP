@@ -1,10 +1,10 @@
 /******************************************************************
-	
+
 Stylesheet: Main Stylesheet
 
 Here's where the magic happens. Here is where you import
 all of your Sass files so they can compile into one
-CSS file. 
+CSS file.
 
 ******************************************************************/
 
@@ -44,7 +44,7 @@ CSS file.
 @include foundation-drilldown-menu;
 @include foundation-dropdown;
 @include foundation-dropdown-menu;
-@include foundation-responsive-embed;
+// @include foundation-responsive-embed; // messes with Gutenberg.
 @include foundation-label;
 @include foundation-media-object;
 @include foundation-off-canvas;
@@ -65,4 +65,18 @@ CSS file.
 @include foundation-float-classes;
 
 // Import your custom styles
-@import "global";
+// @import "global"; // I never use.
+
+@import "mixins";
+@import "typography";
+// @import "svgs";
+
+// Foundation component overrides/additions
+// @import "foundation-components/button";
+
+// global styles, continued
+@import "header";
+@import "footer";
+@import "page";
+@import "gravity-forms";
+@import "gutenberg";

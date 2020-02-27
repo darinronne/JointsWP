@@ -125,9 +125,10 @@ gulp.task('styles', function() {
 		    	'ie >= 9',
 				'ios >= 7'
 		    ],
-		    cascade: false
+		    cascade: false,
+            grid: true
 		}))
-		.pipe(plugin.cssnano({safe: true, minifyFontValues: {removeQuotes: false}}))
+		.pipe(plugin.cssnano({autoprefixer: false, safe: true, minifyFontValues: {removeQuotes: false}}))
 		.pipe(plugin.sourcemaps.write('.'))
 		.pipe(gulp.dest(ASSETS.styles))
 		.pipe(touch());

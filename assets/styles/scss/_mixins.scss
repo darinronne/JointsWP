@@ -1,0 +1,22 @@
+
+/*------------------------------------*\
+    #MIXINS
+\*------------------------------------*/
+
+
+
+// Input Placeholder
+
+/*
+Usage:
+    input {
+        @include input-placeholder { color: red; }
+    }
+*/
+@mixin input-placeholder {
+    &::-webkit-input-placeholder { @content }
+    &:-moz-placeholder           { @content }
+    &::-moz-placeholder          { @content }
+    &:-ms-input-placeholder      { @content }
+    &:-input-placeholder         { @content }
+}

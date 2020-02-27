@@ -1,0 +1,41 @@
+
+/*------------------------------------*\
+    #GLOBAL PAGE STYLES
+\*------------------------------------*/
+
+header.article-header,
+.entry-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: $content-width;
+
+    padding-left: ( map-get($grid-container-padding, small) / 2 );
+    padding-right: ( map-get($grid-container-padding, small) / 2 );
+
+    @include breakpoint(medium) {
+        padding-left: ( map-get($grid-container-padding, medium) / 2 );
+        padding-right: ( map-get($grid-container-padding, medium) / 2 );
+    }
+
+    &.wide {
+        max-width: $global-width;
+    }
+
+}
+
+.entry-content .alignfull {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    max-width: 100vw;
+}
+
+@include breakpoint($content-width) {
+    .entry-content .alignwide {
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        max-width: calc(100vw - #{map-get($grid-container-padding, medium)});
+        width: calc(#{$global-width} - #{map-get($grid-container-padding, medium)});
+        transform: translateX(calc(50vw - 50%));
+    }
+}

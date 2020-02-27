@@ -62,36 +62,12 @@
 
 @import '../../../node_modules/foundation-sites/scss/util/util';
 
-// 0. Custom
-// ---------
-
-$global-transition-speed: 0.25s;
-
-$font-family-lato: 'Lato', sans-serif;
-// regular:  400
-// bold:     700
-
 // 1. Global
 // ---------
 
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
-$content-width: rem-calc(900);
 $global-lineheight: 1.5;
-
-// color names using: http://chir.ag/projects/name-that-color/
-$c-denim: #1779ba;
-
-$c-gray-900: #373737;
-$c-gray-800: #515151;
-$c-gray-700: #626262;
-$c-gray-600: #8E8E8E; // $dark-gray
-$c-gray-500: #B2B2B2;
-$c-gray-400: #DBDBDB; // $medium-gray
-$c-gray-300: #EBEBEB;
-$c-gray-200: #F3F3F3; // $light-gray
-$c-gray-100: #F9F9F9;
-
 $foundation-palette: (
   primary: #1779ba,
   secondary: #767676,
@@ -99,14 +75,14 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
-$light-gray: $c-gray-200;
-$medium-gray: $c-gray-400;
-$dark-gray: $c-gray-600;
+$light-gray: #e6e6e6;
+$medium-gray: #cacaca;
+$dark-gray: #8a8a8a;
 $black: #0a0a0a;
-$white: #ffffff;
+$white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: $font-family-lato;
+$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -161,7 +137,7 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
 $header-lineheight: 1.4;
-$header-margin-bottom: 1.4rem;
+$header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
     'h1': ('font-size': 24),
@@ -887,10 +863,7 @@ $grid-margin-gutters: (
   medium: 30px
 );
 $grid-padding-gutters: $grid-margin-gutters;
-$grid-container-padding: (
-  small: 40px,
-  medium: 60px
-);
+$grid-container-padding: $grid-padding-gutters;
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;
 

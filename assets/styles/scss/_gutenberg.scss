@@ -1,0 +1,107 @@
+
+/*------------------------------------*\
+    #GUTENBERG-OVERRIDES
+\*------------------------------------*/
+
+
+
+// Columns
+
+.wp-block-columns {
+    margin-bottom: 0;
+
+    @include breakpoint(medium) {
+        flex-wrap: nowrap;
+    }
+}
+
+.wp-block-column {
+    flex-basis: 100%;
+    margin-bottom: 0;
+
+    &:nth-child(2n) {
+        margin-left: 0;
+    }
+
+    @include breakpoint(small only) {
+        flex-basis: 100% !important;
+    }
+
+    @include breakpoint(medium) {
+        flex-basis: calc(50% - ( #{map-get($grid-margin-gutters, medium)} / 2) );
+
+        &:not(:first-child) {
+            margin-left: map-get($grid-margin-gutters, medium);
+        }
+
+    }
+
+}
+
+
+
+// Image and Embed
+
+.wp-block-embed,
+.wp-block-image figure {
+    margin-bottom: $paragraph-margin-bottom;
+}
+
+.wp-block-embed,
+.wp-block-image {
+    figcaption {
+        text-align: center;
+        font-size: .9em;
+    }
+}
+
+.wp-block-image .alignleft {
+    margin-right: 1.5rem;
+}
+
+.wp-block-image .alignright {
+    margin-left: 1.5rem;
+}
+
+@include breakpoint(small only) {
+
+    .wp-block-image {
+
+        .alignleft,
+        .alignright {
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    }
+
+}
+
+
+
+// Gallery
+
+.wp-block-gallery {
+    margin-left: 0;
+}
+
+
+
+// Cover
+
+.wp-block-cover,
+.wp-block-cover-image {
+    width: auto;
+}
+
+
+
+// Button
+
+.wp-block-button__link {
+    @extend .button;
+}
+.wp-block-button.is-style-secondary .wp-block-button__link {
+    @extend .secondary;
+}

@@ -1,0 +1,33 @@
+
+// White Buttons.
+
+// First, add 'white' option in _settings.scss to "$foundation-palette" map.
+// Then overriding some styles here.
+
+@if map-has-key($button-palette, white) {
+    .button.white {
+        &:hover,
+        &:focus {
+            background-color: rgba($white,0.8);
+        }
+    }
+    .button.white.hollow {
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            border-color: rgba($white,0.8);
+            color: rgba($white,0.8);
+        }
+    }
+    .button.white.clear {
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            color: rgba($white,0.8);
+        }
+    }
+}
+
+
+
+// Additional Button Styles here:

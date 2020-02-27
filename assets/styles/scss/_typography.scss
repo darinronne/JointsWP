@@ -1,0 +1,55 @@
+
+/*------------------------------------*\
+    #TYPOGRAPHY
+\*------------------------------------*/
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.no-mb {
+    margin-bottom: 0 !important;
+}
+
+a.no-underline {
+    text-decoration: none;
+}
+
+@include breakpoint(medium) {
+    ul:not(.products),
+    ol:not(.products) {
+        &.columns-2,
+        &.columns-3 {
+            column-gap: map-get($grid-margin-gutters, medium);
+        }
+        &.columns-2 {
+            column-count: 2;
+        }
+        &.columns-3 {
+            column-count: 3;
+        }
+    }
+}
+
+a {
+    transition: color $global-transition-speed ease-out, background-color $global-transition-speed ease-out;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    a {
+        color: $header-color;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: $anchor-color-hover;
+            text-decoration: $anchor-text-decoration-hover;
+        }
+
+    }
+}

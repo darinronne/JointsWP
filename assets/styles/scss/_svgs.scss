@@ -1,0 +1,21 @@
+
+/*------------------------------------*\
+    #SVGS
+\*------------------------------------*/
+
+$svg-example: 'data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMyAxNCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMwMDY0YTg7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT50cmlhbmdsZS1yaWdodC1ibHVlPC90aXRsZT48cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMCAxNCAwIDAgMTMgNyAwIDE0Ii8+PC9zdmc+';
+
+/*
+Get the Base64 encoded data:
+    https://www.mobilefish.com/services/base64/base64.php
+
+Usage:
+    .svg-example {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-image: url('#{$svg-example}');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+*/
