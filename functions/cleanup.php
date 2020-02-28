@@ -96,3 +96,9 @@ function joints_get_the_author_posts_link() {
 	);
 	return $link;
 }
+
+// Deregister Gravity Forms Browsers Stylesheet.
+function joints_deregister_gform_styles() {
+	wp_deregister_style( 'gforms_browsers_css' );
+}
+add_action( 'gform_enqueue_scripts', 'joints_deregister_gform_styles' );

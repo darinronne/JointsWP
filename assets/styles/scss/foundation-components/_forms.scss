@@ -1,0 +1,11 @@
+
+// Fix the text from not appearing vertically centered and shadow missing.
+select {
+    box-shadow: $input-shadow;
+
+    &:not([multiple]) {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+}

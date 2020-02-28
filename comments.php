@@ -3,7 +3,7 @@
  * Displays current comments and comment form. Works with includes/comments.php.
  *
  * For more info: https://developer.wordpress.org/themes/template-files-section/partial-and-miscellaneous-template-files/comments/
- */ 
+ */
 
 if ( post_password_required() ) {
 	return;
@@ -38,7 +38,7 @@ if ( post_password_required() ) {
 		<?php endif; // Check for comment navigation. ?>
 
 		<ol class="commentlist">
-			<?php wp_list_comments('type=comment&callback=joints_comments'); ?>
+			<?php wp_list_comments( 'type=comment&callback=joints_comments' ); ?>
 		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
@@ -62,6 +62,6 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'jointswp' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(array('class_submit'=>'button')); ?>
+	<?php comment_form( array( 'class_submit' => 'button' ) ); ?>
 
 </div><!-- #comments -->
