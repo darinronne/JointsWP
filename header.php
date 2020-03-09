@@ -38,15 +38,27 @@
 
 		<div class="off-canvas-wrapper">
 
-			<!-- Load off-canvas container. Feel free to remove if not using. -->
 			<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
 
 			<div class="off-canvas-content" data-off-canvas-content>
 
 				<header class="site-header" role="banner">
-
-					<!-- This navs will be applied to the topbar, above all content
-						To see additional nav styles, visit the /parts directory -->
-					<?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
+					<div class="grid-container">
+						<div class="grid-x grid-margin-x align-middle align-justify">
+							<div class="cell shrink">
+								<a class="site-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+									<img class="hide-for-sr" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo.svg" alt="<?php bloginfo( 'name' ); ?>" width="160" height="25" aria-hidden="true">
+									<h1 class="show-for-sr"><?php bloginfo( 'name' ); ?></h1>
+								</a>
+							</div>
+							<nav class="cell shrink primary-menu show-for-large" role="navigation">
+								<h2 class="show-for-sr" id="primary-menu-heading"><?php esc_html_e( 'Website Navigation', 'jointswp' ); ?></h2>
+								<?php joints_top_nav(); ?>
+							</nav>
+							<div class="cell shrink hide-for-large">
+								<button class="site-header__menu-button" type="button" data-open="off-canvas"><span><?php echo esc_attr_x( 'MENU', 'jointswp' ); ?></span><i class="menu-icon"></i></button>
+							</div>
+						</div>
+					</div>
 
 				</header><!-- /.site-header -->

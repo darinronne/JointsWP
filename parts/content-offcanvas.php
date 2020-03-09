@@ -6,13 +6,13 @@
  */
 ?>
 
-<div class="off-canvas position-right" id="off-canvas" data-off-canvas>
+<div class="off-canvas position-right site-off-canvas" id="off-canvas" data-off-canvas  data-transition="overlap">
+	<div class="site-off-canvas__close">
+		<button class="close-button" aria-label="Close menu" type="button" data-close><span aria-hidden="true">&times;</span></button>
+	</div>
+
 	<?php joints_off_canvas_nav(); ?>
 
-	<?php if ( is_active_sidebar( 'offcanvas' ) ) : ?>
-
-		<?php dynamic_sidebar( 'offcanvas' ); ?>
-
-	<?php endif; ?>
+	<?php # get_search_form(); ?>
 
 </div>

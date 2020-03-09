@@ -7,24 +7,17 @@
 
 get_header(); ?>
 
-	<div class="content">
+<main class="site-content" role="main">
 
-		<div class="inner-content grid-x grid-margin-x grid-padding-x">
+	<?php if ( have_posts() ) : ?>
+		<?php while ( have_posts() ) : ?>
+			<?php the_post(); ?>
 
-			<main class="main small-12 large-8 medium-8 cell" role="main">
+			<?php get_template_part( 'parts/loop', 'page' ); ?>
 
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<?php endwhile; ?>
+	<?php endif; ?>
 
-					<?php get_template_part( 'parts/loop', 'page' ); ?>
-
-				<?php endwhile; endif; ?>
-
-			</main> <!-- end #main -->
-
-			<?php get_sidebar(); ?>
-
-		</div> <!-- end #inner-content -->
-
-	</div> <!-- end #content -->
+</main>
 
 <?php get_footer(); ?>

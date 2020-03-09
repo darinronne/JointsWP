@@ -35,6 +35,25 @@ a {
     transition: color $global-transition-speed ease-out, background-color $global-transition-speed ease-out;
 }
 
+.entry-content {
+    h2, .h2 {
+        margin-top: 1.9em;
+    }
+    h3, .h3 {
+        margin-top: 1.7em;
+    }
+    h4, .h4 {
+        margin-top: 1.5em;
+    }
+    h5, .h5 {
+        margin-top: 1.3em;
+    }
+    h6, .h6 {
+        margin-top: 1.1em;
+    }
+}
+
+
 h1, .h1,
 h2, .h2,
 h3, .h3,

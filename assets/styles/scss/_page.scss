@@ -3,23 +3,28 @@
     #GLOBAL PAGE STYLES
 \*------------------------------------*/
 
-header.article-header,
-.entry-content {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: $content-width;
+body.page,
+body.error404 {
 
-    padding-left: ( map-get($grid-container-padding, small) / 2 );
-    padding-right: ( map-get($grid-container-padding, small) / 2 );
+    header.article-header,
+    .entry-content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: $content-width;
 
-    @include breakpoint(medium) {
-        padding-left: ( map-get($grid-container-padding, medium) / 2 );
-        padding-right: ( map-get($grid-container-padding, medium) / 2 );
-    }
+        padding-left: ( map-get($grid-container-padding, small) / 2 );
+        padding-right: ( map-get($grid-container-padding, small) / 2 );
 
-    &.wide {
-        max-width: $global-width;
+        @include breakpoint(medium) {
+            padding-left: ( map-get($grid-container-padding, medium) / 2 );
+            padding-right: ( map-get($grid-container-padding, medium) / 2 );
+        }
+
+        &.wide {
+            max-width: $global-width;
+        }
+
     }
 
 }

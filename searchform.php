@@ -4,10 +4,11 @@
  */
  ?>
 
-<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-	<label>
-		<span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'jointswp' ); ?></span>
-		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search...', 'jointswp' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'jointswp' ); ?>" />
-	</label>
-	<input type="submit" class="search-submit button" value="<?php echo esc_attr_x( 'Search', 'jointswp' ); ?>" />
+<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<div class="input-group">
+		<input type="search" class="input-group-field  search-field" placeholder="<?php echo esc_attr_x( 'Search', 'jointswp' ); ?>" value="<?php echo get_search_query(); ?>" name="s" aria-label="<?php echo esc_attr_x( 'Search', 'jointswp' ); ?>" />
+		<div class="input-group-button">
+			<button class="button" type="submit"><i class="fa fa-search" aria-hidden="true"></i><span class="show-for-sr">Search</span></button>
+		</div>
+	</div>
 </form>
