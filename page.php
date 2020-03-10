@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main class="site-content" role="main">
+<main class="site-content" id="content" role="main">
 
 	<?php if ( have_posts() ) : ?>
 		<?php while ( have_posts() ) : ?>

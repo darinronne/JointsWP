@@ -7,21 +7,23 @@
 
 get_header(); ?>
 
-	<div class="content">
+<div class="site-content" id="content">
+	<div class="grid-container">
+		<div class="grid-x grid-margin-x">
 
-		<div class="inner-content grid-x grid-margin-x grid-padding-x">
-
-			<main class="main small-12 medium-8 large-8 cell" role="main">
+			<main class="cell small-12 medium-9" role="main">
 				<header>
-					<h1 class="archive-title"><?php _e( 'Search Results for:', 'jointswp' ); ?> <?php echo esc_attr( get_search_query() ); ?></h1>
+					<h1 class="archive-title"><?php esc_html_e( 'Search Results for:', 'jointswp' ); ?> <?php echo esc_attr( get_search_query() ); ?></h1>
 				</header>
 
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<?php if ( have_posts() ) : ?>
+					<?php while ( have_posts() ) : ?>
+						<?php the_post(); ?>
 
-					<!-- To see additional archive styles, visit the /parts directory -->
-					<?php get_template_part( 'parts/loop', 'archive' ); ?>
+						<!-- To see additional archive styles, visit the /parts directory -->
+						<?php get_template_part( 'parts/loop', 'archive' ); ?>
 
-				<?php endwhile; ?>
+					<?php endwhile; ?>
 
 					<?php joints_page_navi(); ?>
 
@@ -30,13 +32,14 @@ get_header(); ?>
 					<?php get_template_part( 'parts/content', 'missing' ); ?>
 
 				<?php endif; ?>
+			</main>
 
-			</main> <!-- end #main -->
+			<div class="cell small-12 medium-3">
+				<?php get_sidebar(); ?>
+			</div>
 
-			<?php get_sidebar(); ?>
-
-		</div> <!-- end #inner-content -->
-
-	</div> <!-- end #content -->
+		</div>
+	</div>
+</div>
 
 <?php get_footer(); ?>

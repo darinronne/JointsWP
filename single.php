@@ -5,11 +5,11 @@
 
 get_header(); ?>
 
-<main class="site-content" role="main">
-
+<div class="site-content" id="content" role="main">
 	<div class="grid-container">
 		<div class="grid-x grid-margin-x">
-			<div class="cell small-12 medium-9">
+
+			<main class="cell small-12 medium-9" role="main">
 				<?php if ( have_posts() ) : ?>
 					<?php while ( have_posts() ) : ?>
 						<?php the_post(); ?>
@@ -22,13 +22,14 @@ get_header(); ?>
 					<?php get_template_part( 'parts/content', 'missing' ); ?>
 
 				<?php endif; ?>
-			</div>
+			</main>
+
 			<div class="cell small-12 medium-3">
 				<?php get_sidebar(); ?>
 			</div>
+
 		</div>
 	</div>
-
-</main><!-- /.site-content -->
+</div>
 
 <?php get_footer(); ?>

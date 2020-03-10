@@ -3,6 +3,36 @@
     #HEADER
 \*------------------------------------*/
 
+a.skipto {
+    padding: 6px;
+    position: absolute;
+    top: -40px;
+    left: 0px;
+    color: white;
+    text-decoration: none;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    border-bottom-right-radius: 8px;
+    background-color: #BF1722;
+    transition: top 1s ease-out, background-color $global-transition-speed ease-out;
+    z-index: 100;
+
+
+    &:focus {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        outline-color: transparent;
+        transition: top .1s ease-in, background-color $global-transition-speed ease-out;
+    }
+
+    &:hover {
+        background-color: darken(#BF1722,10%);
+        transition: background-color $global-transition-speed ease-out;
+    }
+
+}
+
 .site-header {
     padding-top: rem-calc(15);
     padding-bottom: rem-calc(15);

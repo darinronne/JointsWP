@@ -72,8 +72,9 @@ CSS file.
 @import "svgs";
 
 // Foundation component overrides/additions
-// @import "foundation-components/button";
+@import "foundation-components/button";
 @import "foundation-components/forms";
+@import "foundation-components/pagination";
 
 // global styles, continued
 @import "header";

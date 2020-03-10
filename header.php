@@ -42,6 +42,8 @@
 
 			<div class="off-canvas-content" data-off-canvas-content>
 
+				<a class="skipto" href="#content">Skip to main content</a>
+
 				<header class="site-header" role="banner">
 					<div class="grid-container">
 						<div class="grid-x grid-margin-x align-middle align-justify">
