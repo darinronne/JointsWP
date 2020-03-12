@@ -67,6 +67,7 @@ const ASSETS = {
 	styles: 'assets/styles/',
 	scripts: 'assets/scripts/',
 	images: 'assets/images/',
+    webfontsfontawesome: 'assets/webfonts-fontawesome/',
 	all: 'assets/'
 };
 
@@ -140,6 +141,11 @@ gulp.task('images', function() {
 		.pipe(plugin.imagemin())
 		.pipe(gulp.dest(ASSETS.images))
 		.pipe(touch());
+});
+
+gulp.task('fontawesome', function() {
+    return gulp.src('node_modules/@fortawesome/fontawesome-pro/webfonts/*')
+        .pipe(gulp.dest(ASSETS.webfontsfontawesome));
 });
 
  gulp.task( 'translate', function () {

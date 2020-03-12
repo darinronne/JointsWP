@@ -51,3 +51,49 @@ Compiles and minifies all scripts and styles.
 
 ### Images
 * `assets/images/src/` - place your theme images here. Each image will be optimized when the build process is ran.
+
+## Font Awesome
+
+### Installation
+
+#### Create/Update .npmrc File
+Create a `.npmrc` file if it doesn't already exist and add the following to it.
+
+```
+@fortawesome:registry=https://npm.fontawesome.com/
+//npm.fontawesome.com/:_authToken=FONTAWESOME_NPM_AUTH_TOKEN
+```
+
+Replace `FONTAWESOME_NPM_AUTH_TOKEN` with your unique Font Awesome token.
+
+#### Get Font Awesome
+```bash
+$ npm install --save-dev @fortawesome/fontawesome-pro
+```
+
+#### Copy Font Files to Assets
+```bash
+$ npm run fontawesome
+```
+This task copies the webfont files to `assets/webfonts-fontawesome` directory.
+
+#### Update style.scss
+* Un-comment the required Font Awesome @import.
+* Un-comment the @imports for the weights you need.
+
+### Using SCSS Mixins
+```
+.user {
+	@extend %fa-icon;
+	@extend .fas;
+
+	&:before {
+		content: fa-content($fa-var-user);
+	}
+}
+```
+
+### Resources
+[Using NPM](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers) - If logged in, you can get your Font Awesome token here.
+
+[Using with SCSS](https://fontawesome.com/how-to-use/on-the-web/using-with/sass)

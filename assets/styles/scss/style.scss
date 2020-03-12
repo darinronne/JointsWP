@@ -64,6 +64,17 @@ CSS file.
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 
+// Font Awesome 5
+
+// Required if using Font Awesome.
+// @import "../../../node_modules/@fortawesome/fontawesome-pro/scss/fontawesome.scss";
+
+// Pick your weights and/or brand files
+// @import "../../../node_modules/@fortawesome/fontawesome-pro/scss/solid.scss";
+// @import "../../../node_modules/@fortawesome/fontawesome-pro/scss/regular.scss";
+// @import "../../../node_modules/@fortawesome/fontawesome-pro/scss/light.scss";
+// @import "../../../node_modules/@fortawesome/fontawesome-pro/scss/brands.scss";
+
 // Import your custom styles
 // @import "global"; // I never use.
 
