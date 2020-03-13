@@ -63,19 +63,13 @@ Create a `.npmrc` file if it doesn't already exist and add the following to it.
 @fortawesome:registry=https://npm.fontawesome.com/
 //npm.fontawesome.com/:_authToken=FONTAWESOME_NPM_AUTH_TOKEN
 ```
-
 Replace `FONTAWESOME_NPM_AUTH_TOKEN` with your unique Font Awesome token.
 
 #### Get Font Awesome
 ```bash
-$ npm install --save-dev @fortawesome/fontawesome-pro
-```
-
-#### Copy Font Files to Assets
-```bash
 $ npm run fontawesome
 ```
-This task copies the webfont files to `assets/webfonts-fontawesome` directory.
+This script installs the Font Awesome NPM package, then copies the webfont files to `assets/webfonts-fontawesome` directory.
 
 #### Update style.scss
 * Un-comment the required Font Awesome @import.

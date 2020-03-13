@@ -40,9 +40,9 @@
     "scripts": "gulp scripts",
     "styles": "gulp styles",
     "images": "gulp images",
-    "fontawesome": "gulp fontawesome",
     "watch": "gulp watch",
     "browsersync": "gulp browsersync",
-    "update-foundation": "npm install foundation-sites"
+    "update-foundation": "npm install foundation-sites",
+    "fontawesome": "npm install @fortawesome/fontawesome-pro && gulp fontawesome"
   }
 }
