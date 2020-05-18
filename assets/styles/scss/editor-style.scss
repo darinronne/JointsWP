@@ -1,0 +1,47 @@
+@import "settings";
+
+$global-font-size-px: ( ( ($global-font-size / 1%) / 100 ) * 16 ) + 0px;
+
+body {
+    font-family: $body-font-family;
+    font-size: $global-font-size-px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: $header-font-family;
+    font-weight: $header-font-weight;
+}
+
+@each $header, $header-val in map-get( $header-styles, 'medium' ) {
+    #{$header} {
+        @each $var, $val in $header-val {
+            font-size: $val + 0px;
+        }
+    }
+}
+
+// Post Title / Heading 1
+.editor-post-title__block .editor-post-title__input {
+    font-family: $header-font-family;
+    font-size: map-deep-get($header-styles, 'medium', 'h1', 'font-size') + 0px;
+    font-weight: $header-font-weight;
+}
+
+.block-editor-block-list__block[data-type="core/paragraph"] p {
+    line-height: $paragraph-lineheight;
+}
+
+.block-library-list ol,
+.block-library-list ul {
+    padding-left: 0;
+}
+
+.wp-block-button__link {
+    background-color: $button-background;
+    border-width: $button-hollow-border-width;
+    font-size: strip-unit( map-get( $button-sizes, 'default' ) ) * $global-font-size-px;
+    padding: $button-padding;
+    line-height: 1;
+}

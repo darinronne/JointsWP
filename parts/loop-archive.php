@@ -13,10 +13,10 @@
 		<?php get_template_part( 'parts/content', 'byline' ); ?>
 	</header>
 
-	<section class="entry-content" itemprop="text">
+	<div class="entry-content" itemprop="text">
 		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'full' ); ?></a>
 		<?php the_content( '<button class="tiny">' . __( 'Read more...', 'jointswp' ) . '</button>' ); ?>
-	</section>
+	</div>
 
 	<footer class="article-footer">
 		<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'jointswp' ) . '</span> ', ', ', '' ); ?></p>

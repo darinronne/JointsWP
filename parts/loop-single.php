@@ -11,10 +11,10 @@
 		<?php get_template_part( 'parts/content', 'byline' ); ?>
 	</header>
 
-	<section class="entry-content" itemprop="text">
+	<div class="entry-content" itemprop="text">
 		<?php the_post_thumbnail( 'full' ); ?>
 		<?php the_content(); ?>
-	</section>
+	</div>
 
 	<footer class="article-footer">
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'jointswp' ), 'after' => '</div>' ) ); ?>

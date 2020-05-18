@@ -1,0 +1,238 @@
+
+/*------------------------------------*\
+    #TABLE
+\*------------------------------------*/
+
+table {
+    line-height: 1.2em;
+    width: 100% !important;
+
+    td,
+    th {
+        border-bottom: $table-border;
+    }
+
+    thead {
+        border-bottom: 2px solid $c-gray-500;
+    }
+    tfoot {
+        border-top: 2px solid $c-gray-500;
+    }
+
+    &.cell-borders {
+        td,
+        th {
+            border: $table-border;
+        }
+    }
+
+    &.text-center {
+        tfoot td,
+        tfoot th,
+        thead td,
+        thead th,
+        tbody td, {
+            text-align: center;
+        }
+
+    }
+
+    &.text-right {
+        tfoot td,
+        tfoot th,
+        thead td,
+        thead th,
+        tbody td, {
+            text-align: right;
+        }
+
+    }
+
+    &.small {
+        font-size: .8em;
+    }
+
+    // Overrides for DataTables.
+    &.dataTable {
+        border-collapse: collapse !important;
+
+        thead th {
+            // padding: $table-padding;
+            padding-left: 10px !important;
+
+            &:not(.sorting_disabled) {
+                padding-right: 18px;
+            }
+
+        }
+
+        thead .sorting:hover,
+        thead .sorting_asc,
+        thead .sorting_desc {
+            background-color: rgba($black,.075);
+        }
+
+    }
+
+}
+
+
+.tablepress {
+
+    td,
+    th {
+        padding: $table-padding;
+    }
+
+    td {
+        background-color: $table-background;
+    }
+
+    .odd td {
+        background-color: $table-striped-background;
+    }
+
+    .row-hover tr:hover td {
+        background-color: $table-row-hover;
+    }
+
+    tbody td,
+    tfoot th {
+        border-top: $table-border;
+    }
+
+    thead th {
+        background-color: $table-head-background;
+        border-bottom: $table-border;
+    }
+
+    tfoot th {
+        background-color: $table-foot-background;
+    }
+
+    // Overrides for DataTables specific to TablePress.
+    &.dataTable .sorting:hover,
+    &.dataTable .sorting_asc,
+    &.dataTable .sorting_desc {
+        background-image: none;
+    }
+
+}
+
+
+
+// Overrides for DataTables sorting/filtering.
+// Woocommerce Product Tables and TablePress both use it.
+body .dataTables_wrapper {
+
+    .dataTables_scrollBody {
+        table thead,
+        table tfoot {
+            border: none;
+        }
+    }
+
+    .dataTables_filter,
+    .dataTables_length {
+        margin-bottom: .5em;
+        font-size: .8rem;
+
+        label {
+            font-size: 1em;
+        }
+
+        select, input {
+            padding-top: .2em;
+            padding-bottom: .2em;
+            height: 35px;
+        }
+
+    }
+
+    .dataTables_info {
+        font-size: .8rem;
+    }
+
+    .dataTables_paginate {
+        font-size: .8rem;
+
+        .paginate_button {
+            border: none !important;
+            border-radius: $pagination-radius !important;
+            color: $pagination-item-color !important;
+            box-shadow: none !important;
+            padding: .2em .7em;
+            font-weight: 500;
+
+            &:hover,
+            &:focus {
+                // background: $pagination-item-background-hover !important;
+                // color: $pagination-item-color !important;
+                background: transparent !important;
+                color: $black !important;
+            }
+
+            &.current,
+            &.current:hover,
+            &.current:focus {
+                background: $pagination-item-background-current !important;
+                color: $pagination-item-color-current !important;
+            }
+
+            &.current {
+                position: relative;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    height: 2px;
+                    width: 18px;
+                    background-color: $black;
+                }
+            }
+
+            &.disabled,
+            &.disabled:hover,
+            &.disabled:focus {
+                background: transparent !important;
+                color: $pagination-item-color-disabled !important;
+            }
+
+            &.previous:before,
+            &.next:after {
+                display: inline-block;
+                position: inherit;
+                font-family: inherit;
+                text-shadow: none;
+                color: inherit;
+                font-weight: inherit;
+                font-size: inherit;
+                left: 0;
+                right: 0;
+            }
+
+            &.previous:before {
+                margin-right: .2rem;
+                content: '\2190';
+            }
+
+            &.next:after {
+                margin-left: .2rem;
+                content: '\2192';
+            }
+
+            &.previous.disabled:before,
+            &.next.disabled:after {
+                color: $pagination-item-color-disabled !important;
+            }
+
+        }
+
+    }
+
+}

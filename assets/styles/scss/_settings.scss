@@ -68,7 +68,7 @@
 $global-transition-speed: 0.25s;
 // transition: property $global-transition-speed ease-out;
 
-$font-family-lato: 'Lato', sans-serif;
+$font-family-roboto: 'Roboto', sans-serif;
 // regular:  400
 // bold:     700
 
@@ -110,7 +110,7 @@ $black: #0a0a0a;
 $white: #ffffff;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: $font-family-lato;
+$body-font-family: $font-family-roboto;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -198,7 +198,7 @@ $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
 $anchor-color: $primary-color;
 $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
-$anchor-text-decoration: underline;
+$anchor-text-decoration: none;
 $anchor-text-decoration-hover: underline;
 $hr-width: $global-width;
 $hr-border: 1px solid $medium-gray;

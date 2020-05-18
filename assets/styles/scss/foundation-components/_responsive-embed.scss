@@ -1,0 +1,21 @@
+// I am replacing the responsive embed mixin so that it doesnt mess with Gutenberg blocks.
+
+// Original File: ../../../../node_modules/foundation-sites/scss/components/_responsive_embed.scss
+
+// I didn't need to include the variable and other mixins from the file.
+// They must still be called elsewhere.
+
+@mixin foundation-responsive-embed-new {
+  :not(.wp-block-embed__wrapper) > .responsive-embed,
+  :not(.wp-block-embed__wrapper) > .flex-video {
+    @include responsive-embed($ratio: default);
+
+    $ratios: map-remove($responsive-embed-ratios,default);
+
+    @each $name, $ratio in $ratios {
+      &.#{$name} {
+        padding-bottom: ratio-to-percentage($ratio);
+      }
+    }
+  }
+}

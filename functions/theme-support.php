@@ -12,19 +12,27 @@ function joints_theme_support() {
 	// Gutenberg.
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'disable-custom-colors' );
+	add_theme_support( 'disable-custom-gradients' );
+	add_theme_support( 'editor-gradient-presets', array() );
 	add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'editor-styles' );
 
 	add_theme_support(
 		'editor-color-palette', array(
 			array(
-				'name'  => esc_html__( 'Denim', 'jointswp' ),
-				'slug'  => 'denim',
-				'color' => '#1779ba',
-			),
-			array(
 				'name'  => esc_html__( 'White', 'jointswp' ),
 				'slug'  => 'white',
 				'color' => '#FFFFFF',
+			),
+			array(
+				'name'  => esc_html__( 'Black', 'jointswp' ),
+				'slug'  => 'black',
+				'color' => '#0a0a0a',
+			),
+			array(
+				'name'  => esc_html__( 'Denim', 'jointswp' ),
+				'slug'  => 'denim',
+				'color' => '#1779ba',
 			),
 		)
 	);

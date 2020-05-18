@@ -10,14 +10,14 @@ get_header(); ?>
 <main class="site-content" id="content" role="main">
 	<article class="content-not-found">
 
-		<header class="article-header">
-			<h1><?php esc_html_e( 'Epic 404 - Article Not Found', 'jointswp' ); ?></h1>
+		<header class="article-header content-container">
+			<h1 class="page-title"><?php esc_html_e( 'Page Not Found', 'jointswp' ); ?></h1>
 		</header>
 
-		<section class="entry-content">
-			<p><?php esc_html_e( 'The article you were looking for was not found, but maybe try looking again!', 'jointswp' ); ?></p>
+		<div class="entry-content content-container">
+			<p><?php esc_html_e( 'The page you were looking for was not found. Maybe try a site search.', 'jointswp' ); ?></p>
 			<p><?php get_search_form(); ?></p>
-		</section>
+		</div>
 
 	</article>
 </main>

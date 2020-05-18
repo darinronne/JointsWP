@@ -9,7 +9,7 @@
 .gform_wrapper {
     border: 1px solid $medium-gray;
     border-radius: $global-radius;
-    margin: 0 0 map-get($grid-margin-gutters, medium);
+    margin-bottom: $paragraph-margin-bottom;
     padding:
         ( map-get($grid-margin-gutters, small) - 10px )
         map-get($grid-margin-gutters, small)

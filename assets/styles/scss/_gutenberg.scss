@@ -5,6 +5,28 @@
 
 
 
+// Gutenberg color options
+// -- see editor-color-palette in functions/theme-support.php
+$colors: (
+    'white' : $white,
+    'black' : $black,
+    'denim' : $c-denim,
+);
+
+@each $name, $color in $colors {
+
+    .has-#{$name}-color {
+        color: $color;
+    }
+
+    .has-#{$name}-background-color {
+        background-color: $color;
+    }
+
+}
+
+
+
 // Columns
 
 .wp-block-columns {
@@ -50,8 +72,9 @@
 .wp-block-embed,
 .wp-block-image {
     figcaption {
-        text-align: center;
-        font-size: .9em;
+        font-size: rem-calc(15);
+        line-height: 1.3em;
+        color: $c-gray-800;
     }
 }
 
@@ -80,19 +103,24 @@
 
 
 
-// Gallery
-
-.wp-block-gallery {
-    margin-left: 0;
-}
-
-
-
 // Cover
 
 .wp-block-cover,
 .wp-block-cover-image {
-    width: auto;
+
+    p {
+        font-weight: 500;
+    }
+
+    .wp-block-cover__inner-container {
+        color: $white;
+    }
+
+    // my class: .has-narrow-width
+    &.has-narrow-width .wp-block-cover__inner-container {
+        max-width: rem-calc(650);
+    }
+
 }
 
 
@@ -100,8 +128,185 @@
 // Button
 
 .wp-block-button__link {
-    @extend .button;
+    background-color: $button-background;
+    border: $button-hollow-border-width solid transparent;
+    margin: $button-margin;
+    padding: $button-padding;
+    font-family: $button-font-family;
+    font-size: map-get($button-sizes, default);
+    font-weight: 500;
+    line-height: 1;
+    text-decoration: none !important;
+    transition: $button-transition;
+
+    @at-root .is-style-outline #{&} {
+        border-width: $button-hollow-border-width;
+    }
+
+    // my class: .is-expanded
+    @at-root .is-expanded #{&} {
+        display: block;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: $button-background-hover;
+    }
+
+    @at-root .is-style-outline #{&} {
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            color: $button-background-hover;
+        }
+    }
+
+    @each $name, $color in $colors {
+
+        &.has-#{$name}-color {
+            color: $color;
+        }
+
+        &.has-#{$name}-background-color {
+            background-color: $color;
+
+            &:hover,
+            &:focus {
+                background-color: scale-color($color, $lightness: $button-background-hover-lightness);
+            }
+
+        }
+
+        @at-root .is-style-outline #{&}.has-#{$name}-color {
+            &:hover,
+            &:focus {
+                color: scale-color($color, $lightness: $button-hollow-hover-lightness);
+            }
+
+        }
+
+    }
+
+    // Override the hover style for white-outline button that is created in the @each loop above.
+    @at-root .is-style-outline #{&}.has-white-color {
+        &:hover,
+        &:focus {
+            border-color: rgba($white,0.8);
+            color: rgba($white,0.8);
+        }
+    }
+
 }
-.wp-block-button.is-style-secondary .wp-block-button__link {
-    @extend .secondary;
+
+
+
+// Seperator / Horizontal Rule
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+    max-width: rem-calc(100);
+    border-bottom-width: 2px;
+}
+
+
+
+// Group
+
+.wp-block-group.alignfull {
+
+    .wp-block-group__inner-container {
+        padding-left: ( map-get($grid-container-padding, small) / 2 );
+        padding-right: ( map-get($grid-container-padding, small) / 2 );
+
+        @include breakpoint(medium) {
+            padding-left: ( map-get($grid-container-padding, medium) / 2 );
+            padding-right: ( map-get($grid-container-padding, medium) / 2 );
+        }
+    }
+
+}
+
+
+
+// Table
+
+.wp-block-table:not(.is-style-stripes) {
+    tbody tr:nth-child(2n) {
+        background-color: transparent;
+    }
+}
+
+.wp-block-table.is-style-stripes {
+    border-bottom: none;
+
+    tbody tr:nth-child(odd) {
+        background-color: transparent;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: $table-striped-background;
+    }
+
+    td {
+        border-bottom: $table-border;
+    }
+
+}
+
+
+
+// Gallery
+
+$wp-block-gallery-classes: (
+    '': map-get($grid-margin-gutters, medium)/2,
+    '.has-no-gutters': 0,
+    '.has-large-gutters': 50px,
+);
+
+@each $class, $gutter in $wp-block-gallery-classes {
+    #{$class}.blocks-gallery-grid,
+    .wp-block-gallery#{$class} {
+
+        .blocks-gallery-image,
+        .blocks-gallery-item {
+            margin: 0 $gutter $gutter 0;
+            width: calc((100% - #{$gutter})/2);
+
+            &:nth-of-type(2n) {
+                margin-right:0;
+            }
+
+        }
+
+        @media (min-width:600px) {
+
+            @for $i from 3 through 8 {
+                &.columns-#{$i} .blocks-gallery-image,
+                &.columns-#{$i} .blocks-gallery-item {
+                    width: calc((100% - #{$gutter * ($i - 1)})/#{$i});
+                    margin-right: $gutter;
+                }
+                @supports (-ms-ime-align:auto) {
+                    &.columns-#{$i} .blocks-gallery-image,
+                    &.columns-#{$i} .blocks-gallery-item {
+                        width: calc((100% - #{$gutter * ($i - 1)})/#{$i} - 1px);
+                    }
+                }
+            }
+
+            @for $i from 1 through 8 {
+                &.columns-#{$i} .blocks-gallery-image:nth-of-type(#{$i}n),
+                &.columns-#{$i} .blocks-gallery-item:nth-of-type(#{$i}n) {
+                    margin-right:0;
+                }
+            }
+
+        }
+
+        .blocks-gallery-image:last-child,
+        .blocks-gallery-item:last-child {
+            margin-right: 0;
+        }
+
+    }
+
 }

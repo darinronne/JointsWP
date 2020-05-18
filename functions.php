@@ -26,10 +26,10 @@ require_once get_template_directory() . '/functions/comments.php';
 require_once get_template_directory() . '/functions/page-navi.php';
 
 // Adds support for multiple languages.
-require_once get_template_directory() . '/functions/translation/translation.php';
+// require_once get_template_directory() . '/functions/translation/translation.php';
 
 // Adds site styles to the WordPress editor.
-// require_once get_template_directory() . '/functions/editor-styles.php';
+require_once get_template_directory() . '/functions/editor-styles.php';
 
 // Remove Emoji Support.
 require_once get_template_directory() . '/functions/disable-emoji.php';
@@ -39,6 +39,9 @@ require_once get_template_directory() . '/functions/disable-emoji.php';
 
 // Use this as a template for custom post types.
 // require_once get_template_directory() . '/functions/custom-post-type.php';
+
+// Add/Edit Image Sizes.
+require_once get_template_directory() . '/functions/images.php';
 
 // Customize the WordPress login menu.
 require_once get_template_directory() . '/functions/login.php';

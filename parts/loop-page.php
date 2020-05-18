@@ -6,12 +6,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article" itemscope itemtype="http://schema.org/WebPage">
 
-	<header class="article-header">
-		<h1 class="page-title"><?php the_title(); ?></h1>
+	<header class="article-header content-container">
+		<h1 class="page-title" itemprop="name"><?php the_title(); ?></h1>
 	</header>
 
-	<section class="entry-content" itemprop="text">
+	<div class="entry-content content-container" itemprop="text">
 		<?php the_content(); ?>
-	</section>
+	</div>
 
 </article>

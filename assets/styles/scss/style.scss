@@ -44,7 +44,9 @@ CSS file.
 @include foundation-drilldown-menu;
 @include foundation-dropdown;
 @include foundation-dropdown-menu;
-// @include foundation-responsive-embed; // messes with Gutenberg.
+// @include foundation-responsive-embed; // Replacing with the next two lines, messes with Gutenberg.
+@import "foundation-components/responsive-embed";
+@include foundation-responsive-embed-new;
 @include foundation-label;
 @include foundation-media-object;
 @include foundation-off-canvas;
@@ -75,9 +77,6 @@ CSS file.
 // @import "../../../node_modules/@fortawesome/fontawesome-pro/scss/light.scss";
 // @import "../../../node_modules/@fortawesome/fontawesome-pro/scss/brands.scss";
 
-// Import your custom styles
-// @import "global"; // I never use.
-
 @import "mixins";
 @import "typography";
 @import "svgs";
@@ -85,11 +84,12 @@ CSS file.
 // Foundation component overrides/additions
 @import "foundation-components/button";
 @import "foundation-components/forms";
+@import "foundation-components/grid";
 @import "foundation-components/pagination";
+@import "foundation-components/table";
 
-// global styles, continued
+@import "global";
 @import "header";
 @import "footer";
-@import "page";
 @import "gravity-forms";
 @import "gutenberg";
