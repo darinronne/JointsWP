@@ -1,7 +1,10 @@
 <?php
 /**
  * The template part for displaying an author byline
+ *
+ * @package JointsWP
  */
+
 ?>
 
 <p class="byline">

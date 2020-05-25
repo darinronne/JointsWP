@@ -3,9 +3,11 @@
  * The template part for displaying a grid of posts
  *
  * For more info: http://jointswp.com/docs/grid-archive/
+ *
+ * @package JointsWP
  */
 
-// Adjust the amount of rows in the grid
+// Adjust the amount of rows in the grid.
 $grid_columns = 4; ?>
 
 <?php if ( 0 === ( $wp_query->current_post ) % $grid_columns ) : ?>

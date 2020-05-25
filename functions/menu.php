@@ -1,5 +1,13 @@
 <?php
-// Register menus.
+/**
+ * Menus
+ *
+ * @package JointsWP
+ */
+
+/**
+ * Register menus.
+ */
 register_nav_menus(
 	array(
 		'main-nav'      => __( 'The Main Menu', 'jointswp' ), // Main nav in header.
@@ -8,7 +16,9 @@ register_nav_menus(
 	)
 );
 
-// The Top Menu.
+/**
+ * The Top Menu.
+ */
 function joints_top_nav() {
 	wp_nav_menu(
 		array(
@@ -24,7 +34,9 @@ function joints_top_nav() {
 	);
 }
 
-// Big thanks to Brett Mason (https://github.com/brettsmason) for the awesome walker.
+/**
+ * Big thanks to Brett Mason (https://github.com/brettsmason) for the awesome walker.
+ */
 class Topbar_Menu_Walker extends Walker_Nav_Menu {
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent  = str_repeat( "\t", $depth );
@@ -32,7 +44,9 @@ class Topbar_Menu_Walker extends Walker_Nav_Menu {
 	}
 }
 
-// The Off Canvas Menu.
+/**
+ * The Off Canvas Menu.
+ */
 function joints_off_canvas_nav() {
 	wp_nav_menu(
 		array(
@@ -48,6 +62,9 @@ function joints_off_canvas_nav() {
 	);
 }
 
+/**
+ * Off Canvas Menu Walker.
+ */
 class Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent  = str_repeat( "\t", $depth );
@@ -55,7 +72,9 @@ class Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
 	}
 }
 
-// The Footer Menu.
+/**
+ * The Footer Menu.
+ */
 function joints_footer_links() {
 	wp_nav_menu(
 		array(
@@ -67,9 +86,11 @@ function joints_footer_links() {
 			'fallback_cb'    => '', // Fallback function.
 		)
 	);
-} /* End Footer Menu */
+}
 
-// Header Fallback Menu.
+/**
+ * Header Fallback Menu.
+ */
 function joints_main_nav_fallback() {
 	wp_page_menu(
 		array(
@@ -84,16 +105,24 @@ function joints_main_nav_fallback() {
 	);
 }
 
-// Footer Fallback Menu.
+/**
+ * Footer Fallback Menu.
+ */
 function joints_footer_links_fallback() {
 	/* You can put a default here if you like */
 }
 
-// Add Foundation active class to menu.
+/**
+ * Add Foundation active class to menu.
+ *
+ * @param array   $classes Array of the CSS classes that are applied to the menu item's <li> element.
+ * @param WP_Post $item The current menu item.
+ */
 function required_active_nav_class( $classes, $item ) {
-	if ( $item->current == 1 || $item->current_item_ancestor == true ) {
+	if ( 1 == $item->current || true == $item->current_item_ancestor ) {
 		$classes[] = 'active';
 	}
 	return $classes;
 }
+
 add_filter( 'nav_menu_css_class', 'required_active_nav_class', 10, 2 );

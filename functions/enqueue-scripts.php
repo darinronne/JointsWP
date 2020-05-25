@@ -1,5 +1,14 @@
 <?php
-function site_scripts() {
+/**
+ * Enqueue Scripts and Styles.
+ *
+ * @package JointsWP
+ */
+
+/**
+ * Enqueueing scripts and styles.
+ */
+function joints_site_scripts() {
 	global $wp_styles; // Call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way.
 
 	// Adding scripts file in the footer.
@@ -16,4 +25,5 @@ function site_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'site_scripts', 999 );
+
+add_action( 'wp_enqueue_scripts', 'joints_site_scripts', 999 );

@@ -4,7 +4,9 @@
  *
  * This is the template that displays all of the <head> section
  *
+ * @package JointsWP
  */
+
 ?>
 
 <!doctype html>

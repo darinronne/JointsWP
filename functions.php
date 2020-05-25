@@ -2,6 +2,7 @@
 /**
  * For more info: https://developer.wordpress.org/themes/basics/theme-functions/
  *
+ * @package JointsWP
  */
 
 // Theme support options.
@@ -18,6 +19,9 @@ require_once get_template_directory() . '/functions/menu.php';
 
 // Register sidebars/widget areas.
 require_once get_template_directory() . '/functions/sidebar.php';
+
+// Add/Edit Image Sizes.
+require_once get_template_directory() . '/functions/images.php';
 
 // Makes WordPress comments suck less.
 require_once get_template_directory() . '/functions/comments.php';
@@ -40,8 +44,8 @@ require_once get_template_directory() . '/functions/disable-emoji.php';
 // Use this as a template for custom post types.
 // require_once get_template_directory() . '/functions/custom-post-type.php';
 
-// Add/Edit Image Sizes.
-require_once get_template_directory() . '/functions/images.php';
+// WooCommerce.
+// require_once get_template_directory() . '/functions/woocommerce.php';
 
 // Customize the WordPress login menu.
 require_once get_template_directory() . '/functions/login.php';

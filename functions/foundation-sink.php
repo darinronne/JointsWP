@@ -1,9 +1,18 @@
 <?php
+/**
+ * Zurb Foundation Kitchen Sink Page
+ *
+ * @package JointsWP
+ */
+
 // If a 'Foundation Sink' page doesn't exist, create one.
-if ( null == get_page_by_title( 'Foundation Sink' ) ) {
+if ( null === get_page_by_title( 'Foundation Sink' ) ) {
 	joints_create_foundation_sink();
 }
 
+/**
+ * Create kitchen sink page.
+ */
 function joints_create_foundation_sink() {
 	$post_content = '
 <div id="top-of-test"></div>

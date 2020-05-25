@@ -5,7 +5,10 @@
  * Comtains closing divs for header.php.
  *
  * For more info: https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package JointsWP
  */
+
 ?>
 
 				<footer class="site-footer" role="contentinfo">

@@ -1,10 +1,14 @@
 <?php
+/**
+ * Cleanup
+ *
+ * @package JointsWP
+ */
 
-// Fire all our initial functions at the start.
-add_action( 'after_setup_theme', 'joints_start', 16 );
-
+/**
+ * Fire all our initial functions at the start.
+ */
 function joints_start() {
-
 	// launching operation cleanup.
 	add_action( 'init', 'joints_head_cleanup' );
 
@@ -20,9 +24,13 @@ function joints_start() {
 	// cleaning up excerpt.
 	add_filter( 'excerpt_more', 'joints_excerpt_more' );
 
-} /* end joints start */
+}
 
-//The default wordpress head is a mess. Let's clean it up by removing all the junk we don't need.
+add_action( 'after_setup_theme', 'joints_start', 16 );
+
+/**
+ * The default WordPress head is a mess. Let's clean it up by removing all the junk we don't need.
+ */
 function joints_head_cleanup() {
 	// Remove category feeds.
 	// remove_action( 'wp_head', 'feed_links_extra', 3 );
@@ -42,16 +50,20 @@ function joints_head_cleanup() {
 	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 	// Remove WP version.
 	remove_action( 'wp_head', 'wp_generator' );
-} /* end Joints head cleanup */
+}
 
-// Remove injected CSS for recent comments widget.
+/**
+ * Remove injected CSS for recent comments widget.
+ */
 function joints_remove_wp_widget_recent_comments_style() {
 	if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
 		remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
 	}
 }
 
-// Remove injected CSS from recent comments widget.
+/**
+ * Remove injected CSS from recent comments widget.
+ */
 function joints_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	if ( isset( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'] ) ) {
@@ -59,22 +71,35 @@ function joints_remove_recent_comments_style() {
 	}
 }
 
-// Remove injected CSS from gallery.
+/**
+ * Remove injected CSS from gallery.
+ *
+ * @param string $css Default CSS styles and opening HTML div container for the gallery shortcode output.
+ */
 function joints_gallery_style( $css ) {
 	return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
 }
 
-// This removes the annoying […] to a Read More link.
+/**
+ * Remove the annoying […] to a Read More link.
+ *
+ * @param string $more The string shown within the more link.
+ */
 function joints_excerpt_more( $more ) {
 	global $post;
 	// edit here if you like.
 	return '<a class="excerpt-read-more" href="' . get_permalink( $post->ID ) . '" title="' . __( 'Read', 'jointswp' ) . get_the_title( $post->ID ) . '">' . __( '... Read more &raquo;', 'jointswp' ) . '</a>';
 }
 
-// Stop WordPress from using the sticky class (which conflicts with Foundation), and style WordPress sticky posts using the .wp-sticky class instead.
+/**
+ * Stop WordPress from using the sticky class (which conflicts with Foundation),
+ * and style WordPress sticky posts using the .wp-sticky class instead.
+ *
+ * @param string[] $classes An array of post class names.
+ */
 function remove_sticky_class( $classes ) {
-	if ( in_array( 'sticky', $classes ) ) {
-		$classes = array_diff( $classes, array( 'sticky' ) );
+	if ( in_array( 'sticky', $classes, true ) ) {
+		$classes   = array_diff( $classes, array( 'sticky' ) );
 		$classes[] = 'wp-sticky';
 	}
 
@@ -82,7 +107,10 @@ function remove_sticky_class( $classes ) {
 }
 add_filter( 'post_class', 'remove_sticky_class' );
 
-// This is a modified the_author_posts_link() which just returns the link. This is necessary to allow usage of the usual l10n process with printf().
+/**
+ * This is a modified the_author_posts_link() which just returns the link.
+ * This is necessary to allow usage of the usual l10n process with printf().
+ */
 function joints_get_the_author_posts_link() {
 	global $authordata;
 	if ( ! is_object( $authordata ) ) {
@@ -91,14 +119,20 @@ function joints_get_the_author_posts_link() {
 	$link = sprintf(
 		'<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
 		get_author_posts_url( $authordata->ID, $authordata->user_nicename ),
+		/* translators: The author's display name. */
 		esc_attr( sprintf( __( 'Posts by %s', 'jointswp' ), get_the_author() ) ), // No further l10n needed, core will take care of this one.
 		get_the_author()
 	);
 	return $link;
 }
 
-// Deregister Gravity Forms Browsers Stylesheet.
+
+
+/**
+ * Deregister Gravity Forms Browsers Stylesheet.
+ */
 function joints_deregister_gform_styles() {
 	wp_deregister_style( 'gforms_browsers_css' );
 }
+
 add_action( 'gform_enqueue_scripts', 'joints_deregister_gform_styles' );

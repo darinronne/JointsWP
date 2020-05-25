@@ -1,5 +1,13 @@
 <?php
-// SIDEBARS AND WIDGETIZED AREAS.
+/**
+ * Sidebars and Widgetized Areas
+ *
+ * @package JointsWP
+ */
+
+/**
+ * Register sidebars.
+ */
 function joints_register_sidebars() {
 	register_sidebar(
 		array(
@@ -49,6 +57,6 @@ function joints_register_sidebars() {
 	sidebar-sidebar2.php
 
 	*/
-} /* end register sidebars */
+}
 
 add_action( 'widgets_init', 'joints_register_sidebars' );

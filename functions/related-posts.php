@@ -1,5 +1,13 @@
 <?php
-// Related Posts Function, matches posts by tags - call using joints_related_posts(); )
+/**
+ * Related Posts
+ *
+ * @package JointsWP
+ */
+
+/**
+ * Related Posts Function, matches posts by tags - call using joints_related_posts(); )
+ */
 function joints_related_posts() {
 	global $post;
 	$tag_arr = '';
@@ -26,4 +34,4 @@ function joints_related_posts() {
 			}
 	wp_reset_postdata();
 	echo '</ul>';
-} /* end joints related posts function */
+}

@@ -3,6 +3,8 @@
  * The template for displaying search results pages
  *
  * For more info: https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ *
+ * @package JointsWP
  */
 
 get_header(); ?>

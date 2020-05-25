@@ -1,4 +1,13 @@
-<?php // Borrowed with love from FoundationPress.
+<?php
+/**
+ * Pagination
+ *
+ * @package JointsWP
+ */
+
+/**
+ * Borrowed with love from FoundationPress.
+ */
 function joints_page_navi( $args = null ) {
 	if ( is_null( $args ) ) {
 		global $wp_query;
@@ -7,7 +16,7 @@ function joints_page_navi( $args = null ) {
 	}
 	$big = 999999999; // This needs to be an unlikely integer.
 	// For more options and info view the docs for paginate_links()
-	// http://codex.wordpress.org/Function_Reference/paginate_links
+	// http://codex.wordpress.org/Function_Reference/paginate_links.
 	$paginate_links = paginate_links( array(
 		'base'      => str_replace( $big, '%#%', html_entity_decode( get_pagenum_link( $big ) ) ),
 		'current'   => max( 1, get_query_var( 'paged' ) ),

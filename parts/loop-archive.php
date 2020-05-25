@@ -3,7 +3,10 @@
  * Template part for displaying posts
  *
  * Used for single, index, archive, search.
+ *
+ * @package JointsWP
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article">

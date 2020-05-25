@@ -1,6 +1,8 @@
 <?php
 /**
  * The template for displaying all single posts and attachments
+ *
+ * @package JointsWP
  */
 
 get_header(); ?>

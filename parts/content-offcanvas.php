@@ -3,7 +3,10 @@
  * The template part for displaying offcanvas content
  *
  * For more info: http://jointswp.com/docs/off-canvas-menu/
+ *
+ * @package JointsWP
  */
+
 ?>
 
 <div class="off-canvas position-right site-off-canvas" id="off-canvas" data-off-canvas  data-transition="overlap">

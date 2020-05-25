@@ -3,6 +3,8 @@
  * The template for displaying 404 (page not found) pages.
  *
  * For more info: https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * @package JointsWP
  */
 
 get_header(); ?>

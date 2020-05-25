@@ -1,13 +1,14 @@
 <?php
+/**
+ * Theme Support
+ *
+ * @package JointsWP
+ */
 
-// Adding WP Functions & Theme Support.
+/**
+ * Adding WP Functions & Theme Support.
+ */
 function joints_theme_support() {
-
-	// Add Woocommerce support.
-	// add_theme_support( 'woocommerce' );
-	// add_theme_support( 'wc-product-gallery-zoom' );
-	// add_theme_support( 'wc-product-gallery-lightbox' );
-	// add_theme_support( 'wc-product-gallery-slider' );
 
 	// Gutenberg.
 	add_theme_support( 'align-wide' );
@@ -37,11 +38,11 @@ function joints_theme_support() {
 		)
 	);
 
-	// Add WP Thumbnail Support.
+	// Add WP Thumbnail Support. Enables Featured Image.
 	add_theme_support( 'post-thumbnails' );
 
-	// Default thumbnail size.
-	set_post_thumbnail_size( 125, 125, true );
+	// Default thumbnail size. (I think this isn't necessary).
+	// set_post_thumbnail_size( 125, 125, true );
 
 	// Add RSS Support.
 	add_theme_support( 'automatic-feed-links' );
@@ -58,7 +59,8 @@ function joints_theme_support() {
 		)
 	);
 
-	// Adding post format support.
+	// Adding post format support. (Most likely will never use).
+	/*
 	add_theme_support( 'post-formats',
 		array(
 			'aside', // title less blurb.
@@ -72,6 +74,7 @@ function joints_theme_support() {
 			'chat', // chat transcript.
 		)
 	);
+	*/
 
 	// Set the maximum allowed width for any content in the theme, like oEmbeds and images added to posts.
 	$GLOBALS['content_width'] = apply_filters( 'joints_theme_support', 1200 );
