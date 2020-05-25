@@ -71,11 +71,11 @@ add_action( 'after_setup_theme', 'joints_image_sizes' );
  */
 function joints_add_custom_image_sizes_to_admin( $sizes ) {
 	return array_merge( $sizes, array(
-		'small'  => __( 'Small' ),
-		'xlarge' => __( 'X-Large' ),
-		// 'small-4x3'  => __( '4X3 Small' ),
-		// 'medium-4x3' => __( '4X3 Medium' ),
-		// 'large-4x3'  => __( '4X3 Large' ),
+		'small'  => __( 'Small', 'jointswp' ),
+		'xlarge' => __( 'X-Large', 'jointswp' ),
+		// 'small-4x3'  => __( '4X3 Small', 'jointswp' ),
+		// 'medium-4x3' => __( '4X3 Medium', 'jointswp' ),
+		// 'large-4x3'  => __( '4X3 Large', 'jointswp' ),
 	) );
 }
 

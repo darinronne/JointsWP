@@ -60,7 +60,7 @@
 								<?php joints_top_nav(); ?>
 							</nav>
 							<div class="cell shrink hide-for-large">
-								<button class="site-header__menu-button" type="button" data-open="off-canvas"><span><?php echo esc_attr_x( 'MENU', 'jointswp' ); ?></span><i class="menu-icon"></i></button>
+								<button class="site-header__menu-button" type="button" data-open="off-canvas"><span><?php echo esc_html( 'Menu', 'jointswp' ); ?></span><i class="menu-icon"></i></button>
 							</div>
 						</div>
 					</div>
