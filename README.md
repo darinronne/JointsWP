@@ -10,6 +10,7 @@ $ cd my-wordpress-folder/wp-content/themes/
 $ git clone https://github.com/darinronne/JointsWP.git
 $ mv JointsWP new-theme-name
 $ cd new-theme-name
+$ git merge origin/ronneified
 $ npm install
 ```
 At this point, JointsWP should be installed and fully running on your local machine. If you prefer to install the theme manually, that will work as well - just be sure to run `npm install` after manually moving the files into the `/themes/` directory.
